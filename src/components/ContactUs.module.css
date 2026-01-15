@@ -1,6 +1,56 @@
+/* Email link style for Contact Us */
+.emailLink {
+  color: #fff;
+  text-decoration: underline;
+  word-break: break-all;
+  font-weight: 600;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+.emailLink:hover,
+.emailLink:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+/* Bottom nav row for image button */
+.bottomNavRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.topImageBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  transition: filter 0.2s;
+}
+.topImageBtn:focus-visible {
+  outline: 2px solid #ffe066;
+}
+.topImageBtn:hover .topImage {
+  filter: brightness(1.15) drop-shadow(0 2px 8px #ffe06688);
+  opacity: 0.85;
+}
+
+.topImage {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  opacity: 0.75;
+  background: transparent;
+  transition: opacity 0.2s, filter 0.2s;
+}
 .section {
-  padding: 90px 6vw;
-  background: #000000;
+  padding: 20px 6vw 24px 6vw;
+  background: #181A1B;
 }
 
 .container {

@@ -1,3 +1,12 @@
+.socialIconWrap {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+}
 .license {
   margin-top: 18px;
   color: #ffffff;
@@ -7,7 +16,7 @@
   letter-spacing: 0.7px;
 }
 .footer {
-  background: #000000;
+  background: #181A1B;
   color: #ffffff;
   padding: 72px 8vw 48px;
   text-align: center;
@@ -110,7 +119,7 @@
 }
 
 .copyright {
-  font-size: 1.45rem;
+  font-size: 1.2rem;
   color: #fff;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-weight: 700;

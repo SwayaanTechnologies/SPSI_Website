@@ -1,4 +1,5 @@
 import styles from "./AboutUs.module.css";
+import TestimonialsCarousel from "./TestimonialsCarousel";
 
 export default function AboutUs() {
   return (
@@ -33,6 +34,7 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
+      <TestimonialsCarousel />
     </section>
   );
 }

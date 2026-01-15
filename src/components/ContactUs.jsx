@@ -144,12 +144,35 @@ export default function ContactUs() {
                 <FontAwesomeIcon icon={detail.icon} />
               </div>
               <h3>{detail.title}</h3>
-              {detail.lines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
+              {detail.title === "E-mail"
+                ? detail.lines.map((line) => (
+                    <p key={line}>
+                      <a
+                        href={`mailto:${line}`}
+                        className={styles.emailLink}
+                      >
+                        {line}
+                      </a>
+                    </p>
+                  ))
+                : detail.lines.map((line) => <p key={line}>{line}</p>)}
             </div>
           ))}
         </div>
+      </div>
+      <div className={styles.bottomNavRow}>
+        <button
+          className={styles.topImageBtn}
+          aria-label="Back to top of homepage"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <img
+            src="/spsi8.png"
+            alt="Back to top logo"
+            className={styles.topImage}
+            style={{ opacity: 0.65 }}
+          />
+        </button>
       </div>
     </section>
   );

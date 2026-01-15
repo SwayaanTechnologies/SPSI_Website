@@ -14,27 +14,22 @@ const SCROLL_THRESHOLD = 40;
 
 const NAV_ITEMS = [
   {
-    label: "Home",
-    target: "home",
-    icon: faHouse,
-  },
-  {
     label: "About Us",
     target: "about",
     icon: faCircleInfo,
   },
   {
-    label: "Our Mission",
+    label: "Mission & Vision",
     target: "mission",
     icon: faBullseye,
   },
   {
-    label: "Core Value",
+    label: "Our Core Values",
     target: "values",
     icon: faGem,
   },
   {
-    label: "Services",
+    label: "Our Services",
     target: "services",
     icon: faShieldHalved,
   },
@@ -49,6 +44,7 @@ const NAV_ITEMS = [
 export default function Header({ hideMenu = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(null);
   const navRef = useRef(null);
   const toggleRef = useRef(null);
 
@@ -160,15 +156,27 @@ export default function Header({ hideMenu = false }) {
             aria-label="Primary navigation"
             aria-hidden={!menuOpen}
           >
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.map((item, idx) => (
               <button
                 type="button"
                 key={item.label}
                 className={styles.navItem}
-                onClick={() => handleNavClick(item.target)}
+                onClick={() => {
+                  setActiveIdx(activeIdx === idx ? null : idx);
+                  handleNavClick(item.target);
+                }}
+                onBlur={() => setActiveIdx(null)}
               >
-                <span className={styles.navIcon}>
-                  <FontAwesomeIcon icon={item.icon} />
+                <span
+                  className={styles.navIcon}
+                  tabIndex={-1}
+                  aria-label={item.label + ' icon'}
+                  style={{ cursor: "pointer", outline: "none" }}
+                >
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    style={{ color: activeIdx === idx ? "#ffe066" : "#fff", transition: "color 0.2s" }}
+                  />
                 </span>
                 <span className={styles.navLabel}>{item.label}</span>
               </button>

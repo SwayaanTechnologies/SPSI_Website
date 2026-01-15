@@ -8,9 +8,26 @@ import {
 import styles from "./SiteFooter.module.css";
 
 function SocialIcon({ label, icon }) {
+  // Brand colors for each icon
+  const brandColors = {
+    Facebook: '#1877F3',
+    Instagram: 'radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)',
+    LinkedIn: '#0A66C2',
+    YouTube: '#FF0000',
+  };
+  const color = brandColors[label] || '#fff';
+  const isGradient = label === 'Instagram';
   return (
     <a href="#" aria-label={label} className={styles.socialLink}>
-      <FontAwesomeIcon icon={icon} />
+      <span
+        className={styles.socialIconWrap}
+        style={isGradient ? { background: color } : {}}
+      >
+        <FontAwesomeIcon
+          icon={icon}
+          style={isGradient ? { color: '#fff', filter: 'drop-shadow(0 1px 2px #0008)' } : { color, filter: 'drop-shadow(0 1px 2px #0008)' }}
+        />
+      </span>
     </a>
   );
 }
@@ -60,7 +77,11 @@ export default function SiteFooter() {
       </div>
       <div className={styles.divider} />
       <div className={styles.bottom}>
-        <p className={styles.copyright}>2026 Shadow Protective Services, inc. All rights reserved.</p>
+        <p className={styles.copyright}>
+          <span className={styles.copyrightHighlight}>
+            © 2026 Shadow Protective Services, Inc. All rights reserved.
+          </span>
+        </p>
         <p>
           Shadow Protective Services, inc. is an equal Opportunity Employer and
           complies with all applicable federal, state, and local laws regarding

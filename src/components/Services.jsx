@@ -49,6 +49,9 @@ const SERVICES = [
   },
 ];
 
+
+import { useState } from "react";
+
 export default function Services() {
   return (
     <section id="services" className={styles.section}>
@@ -57,10 +60,18 @@ export default function Services() {
         <p>Professional and reliable security solutions tailored to your needs</p>
       </div>
       <div className={styles.grid}>
-        {SERVICES.map((service) => (
+        {SERVICES.map((service, idx) => (
           <article key={service.title} className={styles.card}>
-            <div className={styles.icon}>
-              <FontAwesomeIcon icon={service.icon} />
+            <div
+              className={styles.icon}
+              tabIndex={0}
+              aria-label={service.title + ' icon'}
+              role="img"
+              style={{ cursor: "pointer", outline: "none" }}
+            >
+              <FontAwesomeIcon
+                icon={service.icon}
+              />
             </div>
             <h3>{service.title}</h3>
             <p>{service.description}</p>

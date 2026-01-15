@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBullseye, faEye } from "@fortawesome/free-solid-svg-icons";
 import styles from "./MissionVision.module.css";
 
 export default function MissionVision() {
@@ -11,9 +9,6 @@ export default function MissionVision() {
       </div>
       <div className={styles.container}>
         <div className={styles.card}>
-          <div className={styles.iconWrapper}>
-            <FontAwesomeIcon icon={faBullseye} className={styles.icon} />
-          </div>
           <h2 className={styles.cardTitle}>Our Mission</h2>
           <p>
             The mission of Shadow Protective Services, Inc. (SPSI) is to provide
@@ -27,11 +22,6 @@ export default function MissionVision() {
             solutions that exceed expectations and inspire trust in our
             communities.
           </p>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.iconWrapper}>
-            <FontAwesomeIcon icon={faEye} className={styles.icon} />
-          </div>
           <h2 className={styles.cardTitle}>Our Vision</h2>
           <p>
             To be recognized as the leading security services provider, setting the

@@ -6,6 +6,7 @@ import {
   faArrowsRotate,
   faUsers,
   faScaleBalanced,
+  faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./CoreValues.module.css";
 
@@ -51,6 +52,9 @@ const VALUES = [
   },
 ];
 
+
+import { useState } from "react";
+
 export default function CoreValues() {
   return (
     <section id="values" className={styles.section}>
@@ -63,15 +67,28 @@ export default function CoreValues() {
           <div key={value.title} className={styles.card}>
             <div className={styles.cardInner} style={{ animationDelay: `${index * 0.6}s` }}>
               <div className={`${styles.cardFace} ${styles.cardFront}`}>
-                <div className={styles.cardIcon}>
-                  <FontAwesomeIcon icon={value.icon} />
+                <div
+                  className={styles.cardIcon}
+                  tabIndex={0}
+                  aria-label={value.title + ' icon'}
+                  role="img"
+                  style={{ cursor: "pointer", outline: "none" }}
+                >
+                  <FontAwesomeIcon
+                    icon={value.icon}
+                  />
                 </div>
                 <h3>{value.title}</h3>
               </div>
               <div className={`${styles.cardFace} ${styles.cardBack}`}>
-                <ul>
-                  {value.points.map((point) => (
-                    <li key={point}>{point}</li>
+                <ul className={styles.valueList}>
+                  {value.points.map((point, i) => (
+                    <li key={point} className={styles.valueItem}>
+                      <span className={styles.checkWrap} style={{ animationDelay: `${0.2 + i * 0.12}s` }}>
+                        <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+                      </span>
+                      <span>{point}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
