@@ -1,0 +1,270 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: clamp(18px, 4vh, 32px) 6vw;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease,
+    padding 0.35s ease;
+}
+
+.headerScrolled {
+  background: #1d5b56;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  padding: clamp(12px, 3vh, 20px) 5vw;
+}
+
+.logoContainer {
+  position: absolute;
+  left: 1.5vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  height: 200px;
+  width: auto;
+  max-height: 28vw;
+  transition: height 0.35s ease;
+}
+
+.titleGroup {
+  text-align: center;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navPanel {
+  position: absolute;
+  right: clamp(16px, 4vw, 72px);
+  top: calc(26px + 52px + 12px);
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  border-radius: 28px;
+  background: #1d5b56;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(8, 22, 21, 0.55);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: top right;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 0.3s ease, transform 0.3s ease, padding 0.2s ease;
+  z-index: 1000;
+}
+
+.navOpen {
+  opacity: 1;
+  pointer-events: auto;
+  padding: 18px 16px;
+  transform: translateY(0) scale(1);
+}
+
+.navItem {
+  border: none;
+  background: transparent;
+  color: #f5f7ff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 18px;
+  font-family: "Lato", sans-serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.navItem:focus-visible,
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  outline: none;
+  transform: translateX(2px);
+}
+
+.navItem:focus-visible {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+}
+
+.navIcon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.navLabel {
+  font-weight: 600;
+}
+
+.menuToggle {
+  display: flex;
+  position: absolute;
+  right: clamp(16px, 4vw, 72px);
+  top: 26px;
+  width: 52px;
+  height: 48px;
+  border-radius: 18px;
+  border: none;
+  background: #1d5b56;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 12px 30px rgba(8, 22, 21, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menuToggle:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 4px;
+}
+
+.menuToggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(8, 22, 21, 0.55);
+}
+
+.menuToggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menuToggleActive span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuToggleActive span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggleActive span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.companyName {
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  margin: 0;
+  transition: font-size 0.35s ease;
+}
+
+.companyMotto {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-style: italic;
+  margin: 0;
+  transition: letter-spacing 0.35s ease;
+}
+
+.headerScrolled .logo {
+  height: 140px;
+  max-height: 20vw;
+}
+
+.headerScrolled .companyName {
+  font-size: 32px;
+}
+
+.headerScrolled .companyMotto {
+  letter-spacing: 3px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .logo {
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 5vw;
+  }
+
+  .headerScrolled {
+    padding: 12px 5vw;
+  }
+
+  .logoContainer {
+    position: static;
+    transform: none;
+  }
+
+  .logo {
+    height: 120px;
+    max-height: none;
+  }
+
+  .navPanel {
+    left: 50%;
+    right: auto;
+    width: min(320px, 90vw);
+    transform-origin: top center;
+    transform: translate(-50%, 16px) scale(0.96);
+  }
+
+  .navOpen {
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  .companyMotto {
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 420px) {
+  .menuToggle {
+    width: 48px;
+    height: 44px;
+  }
+}
+
+.headerScrolled .menuToggle {
+  top: 18px;
+  width: 46px;
+  height: 42px;
+  border-radius: 16px;
+  gap: 4px;
+}
+
+.headerScrolled .navPanel {
+  top: calc(18px + 42px + 10px);
+}

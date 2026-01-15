@@ -1,0 +1,126 @@
+.headerBlock {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.header {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.subheader {
+  font-size: 1.3rem;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+.star {
+  color: #ffe066;
+  font-size: 1.3em;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
+.section {
+  width: 100vw;
+  min-height: 100vh;
+  background: #000000;
+  padding: 80px 0 60px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 48px 3vw;
+  }
+  .container {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 28px 1vw;
+  }
+  .container {
+    gap: 10px;
+    padding: 0 2px;
+  }
+  .card {
+    padding: 18px 8px 18px 8px;
+  }
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.98rem;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.card {
+  background: #1D5B56;
+  border-radius: 18px;
+  padding: 32px 32px 32px 32px;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  color: #fff;
+}
+.iconWrapper {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+}
+.icon {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  color: #ffffff;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.card p {
+  color: #fff;
+  font-size: 1.15rem;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  margin-top: 0;
+}
+
+.motto {
+  margin-top: 16px;
+  font-weight: 700;
+  color: #ffe066;
+  letter-spacing: 1px;
+  text-align: center;
+}

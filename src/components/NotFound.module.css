@@ -1,0 +1,95 @@
+.notFoundWrapper {
+  min-height: 100vh;
+  background: #1D5B56;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 12px 24px 12px;
+}
+.headerGroup {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+.title {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  color: #fff;
+}
+.motto {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #b2e6e2;
+  margin-bottom: 1.5em;
+  letter-spacing: 2px;
+}
+.icon404 {
+  margin: 0 auto 0.5em auto;
+}
+.code {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #1D9A8F;
+  margin-bottom: 0.2em;
+}
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1em;
+}
+.message {
+  font-size: 1.1rem;
+  color: #e0f7f6;
+  margin-bottom: 2em;
+}
+.homeBtn {
+  display: inline-block;
+  background: #1D9A8F;
+  color: #fff;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 40px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 1em;
+}
+.homeBtn:hover,
+.homeBtn:focus-visible {
+  background: #178D82;
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .logo {
+    height: 48px;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .code {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .homeBtn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}

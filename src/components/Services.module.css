@@ -1,0 +1,119 @@
+
+.section {
+  padding: 72px 8vw;
+  background: #000000;
+  border-radius: 0;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #fff;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.header p {
+  color: #fff;
+  font-size: 1.15rem;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 24px;
+  }
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 32px 2vw;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 4px;
+  }
+  .card {
+    max-width: 98vw;
+    padding: 18px 8px 16px 8px;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.98rem;
+  }
+}
+
+  .card {
+      background: #1D5B56;
+      border-radius: 24px;
+      padding: 28px 24px 24px 24px;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.30);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+      min-width: 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  .icon {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon svg,
+  .icon .fa-icon {
+    width: 38px !important;
+    height: 38px !important;
+    color: #fff;
+    display: block;
+  }
+.card h3 {
+  font-size: 1.45rem;
+  color: #fff;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.card p {
+  color: #fff;
+  font-size: 1.15rem;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 22px 38px rgba(22, 25, 57, 0.18);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 38px rgba(22, 25, 57, 0.12);
+}
