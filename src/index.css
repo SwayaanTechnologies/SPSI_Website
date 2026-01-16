@@ -1,3 +1,11 @@
+/* Hide vertical scrollbar for all browsers */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 :root {
   color-scheme: light;
   --primary-1: #1d5b56;
