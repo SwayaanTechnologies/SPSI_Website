@@ -51,12 +51,12 @@
   position: relative;
   min-width: 340px;
   max-width: 340px;
-  min-height: 180px;
+  /* min-height removed for auto height */
   background: linear-gradient(135deg, #0f5d58 40%, #0d7a72 100%);
   color: #fff;
   border-radius: 28px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.18);
-  padding: 32px 28px 24px 28px;
+  padding: 18px 24px 18px 24px; /* reduced vertical padding */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,9 +72,9 @@
   font-size: 1.15rem;
   font-style: italic;
   color: #f5f7ff;
-  margin-bottom: 18px;
+  margin-bottom: 8px; /* reduced bottom margin */
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .testimonialFooter {

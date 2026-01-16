@@ -7,13 +7,13 @@ const testimonials = [
   {
     name: "Darlene George",
     text: "They are professionals who provide the best guard service I have worked with. Shadow Protective Services provides different levels of service, depending on what your property needs. Very responsive to their clients. I highly recommend them.",
-    rating: 4,
+    rating: 4.5,
     date: "5 years ago"
   },
   {
     name: "Melissa Leverett",
     text: "Hands down the best experience I’ve had yet in my 15+ years of working in the industry with security/courtesy patrol services! Very accommodating, reliable, and always willing to help. I only wish they were a bit more responsive to resident calls and able to be on site faster when calls do come in, however, we are pretty far out for them so we appreciate them accommodating our location.",
-    rating: 5,
+    rating: 4,
     date: "5 years ago"
   },
   {
@@ -31,7 +31,7 @@ const testimonials = [
   {
     name: "Safer Muhammet",
     text: "I’ve dealt with Hope for over a year and he’s always provided top notch security services in my neighborhood. All his officers are professional and make me feel safe when patrolling my neighborhood. Thank you for serving and protecting.",
-    rating: 5,
+    rating: 4.5,
     date: "5 years ago"
   },
   {
@@ -43,7 +43,7 @@ const testimonials = [
   {
     name: "Brian Burke",
     text: "Very dependable and solid security service provider in the Dallas area. Level 3 armed and canine certified. Expert provider of Personnel, facility, event, and other security. Highly recommended.",
-    rating: 5,
+    rating: 4.5,
     date: "2 years ago"
   },
   {
@@ -55,16 +55,41 @@ const testimonials = [
   {
     name: "Charity O.",
     text: "Very professional, amazing services!! They’re always on time and get the job DONE!!! Love working with this company & will continue to do so without hesitation!",
-    rating: 5,
+    rating: 4,
     date: "2 years ago"
   },
 ];
 
-const Star = ({ filled }) => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill={filled ? "#fff" : "none"} stroke="#fff" strokeWidth="1.5" style={{marginRight: 2}} aria-hidden="true">
-    <polygon points="10,2 12.4,7.5 18.3,7.7 13.7,11.7 15.2,17.3 10,14 4.8,17.3 6.3,11.7 1.7,7.7 7.6,7.5" />
-  </svg>
-);
+
+const Star = ({ type }) => {
+  // type: 'full', 'half', 'empty'
+  if (type === 'full') {
+    return (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="#fff" stroke="#fff" strokeWidth="1.5" style={{marginRight: 2}} aria-hidden="true">
+        <polygon points="10,2 12.4,7.5 18.3,7.7 13.7,11.7 15.2,17.3 10,14 4.8,17.3 6.3,11.7 1.7,7.7 7.6,7.5" />
+      </svg>
+    );
+  }
+  if (type === 'half') {
+    return (
+      <svg width="20" height="20" viewBox="0 0 20 20" style={{marginRight: 2}} aria-hidden="true">
+        <defs>
+          <clipPath id="halfStarClip">
+            <rect x="0" y="0" width="10" height="20" />
+          </clipPath>
+        </defs>
+        <polygon points="10,2 12.4,7.5 18.3,7.7 13.7,11.7 15.2,17.3 10,14 4.8,17.3 6.3,11.7 1.7,7.7 7.6,7.5" fill="#fff" style={{clipPath: 'url(#halfStarClip)'}} stroke="#fff" strokeWidth="1.5" />
+        <polygon points="10,2 12.4,7.5 18.3,7.7 13.7,11.7 15.2,17.3 10,14 4.8,17.3 6.3,11.7 1.7,7.7 7.6,7.5" fill="none" stroke="#fff" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+  // empty
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" strokeWidth="1.5" style={{marginRight: 2}} aria-hidden="true">
+      <polygon points="10,2 12.4,7.5 18.3,7.7 13.7,11.7 15.2,17.3 10,14 4.8,17.3 6.3,11.7 1.7,7.7 7.6,7.5" />
+    </svg>
+  );
+};
 
 export default function TestimonialsCarousel() {
   const trackRef = useRef();
@@ -103,9 +128,21 @@ export default function TestimonialsCarousel() {
               </blockquote>
               <div className={styles.testimonialFooter}>
                 <span className={styles.stars} aria-label={`Rated ${t.rating} out of 5`}>
-                  {Array.from({ length: 5 }).map((_, idx) => (
-                    <Star key={idx} filled={idx < t.rating} />
-                  ))}
+                  {(() => {
+                    const stars = [];
+                    const fullStars = Math.floor(t.rating);
+                    const hasHalf = t.rating % 1 >= 0.5;
+                    for (let i = 0; i < 5; i++) {
+                      if (i < fullStars) {
+                        stars.push(<Star key={i} type="full" />);
+                      } else if (i === fullStars && hasHalf) {
+                        stars.push(<Star key={i} type="half" />);
+                      } else {
+                        stars.push(<Star key={i} type="empty" />);
+                      }
+                    }
+                    return stars;
+                  })()}
                 </span>
                 <span className={styles.testimonialName}>{t.name}</span>
               </div>
