@@ -1,6 +1,6 @@
 /* Email link style for Contact Us */
 .emailLink {
-  color: #fff;
+  color: #1976d2;
   text-decoration: underline;
   word-break: break-all;
   font-weight: 600;
@@ -8,56 +8,21 @@
   font-size: 1.08rem;
   transition: color 0.2s;
 }
-.emailLink:hover,
-.emailLink:focus-visible {
-  color: #fff;
-  text-decoration: underline;
-}
-/* Bottom nav row for image button */
-.bottomNavRow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 0;
-}
-
-.topImageBtn {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-  display: flex;
-  align-items: center;
-  transition: filter 0.2s;
-}
-.topImageBtn:focus-visible {
-  outline: 2px solid #ffe066;
-}
-.topImageBtn:hover .topImage {
-  filter: brightness(1.15) drop-shadow(0 2px 8px #ffe06688);
-  opacity: 0.85;
-}
-
-.topImage {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  opacity: 0.75;
-  background: transparent;
-  transition: opacity 0.2s, filter 0.2s;
+ .emailLink:hover,
+ .emailLink:focus-visible {
+   color: #0d47a1;
+   text-decoration: underline;
 }
 .section {
   padding: 20px 6vw 24px 6vw;
-  background: #181A1B;
+  background: #23242a;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }

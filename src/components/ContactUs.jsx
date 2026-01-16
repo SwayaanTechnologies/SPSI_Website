@@ -160,20 +160,6 @@ export default function ContactUs() {
           ))}
         </div>
       </div>
-      <div className={styles.bottomNavRow}>
-        <button
-          className={styles.topImageBtn}
-          aria-label="Back to top of homepage"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <img
-            src="/spsi8.png"
-            alt="Back to top logo"
-            className={styles.topImage}
-            style={{ opacity: 0.65 }}
-          />
-        </button>
-      </div>
     </section>
   );
 }

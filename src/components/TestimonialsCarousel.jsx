@@ -5,39 +5,63 @@ import styles from "./TestimonialsCarousel.module.css";
 
 const testimonials = [
   {
-    name: "John D.",
-    text: "Shadow Protective Services provided exceptional security for our event. Professional and reliable!",
+    name: "Darlene George",
+    text: "They are professionals who provide the best guard service I have worked with. Shadow Protective Services provides different levels of service, depending on what your property needs. Very responsive to their clients. I highly recommend them.",
     rating: 5,
+    date: "5 years ago"
   },
   {
-    name: "Maria S.",
-    text: "The team is always on time and very courteous. Highly recommend their services!",
+    name: "Melissa Leverett",
+    text: "Hands down the best experience I’ve had yet in my 15+ years of working in the industry with security/courtesy patrol services! Very accommodating, reliable, and always willing to help. I only wish they were a bit more responsive to resident calls and able to be on site faster when calls do come in, however, we are pretty far out for them so we appreciate them accommodating our location.",
     rating: 5,
+    date: "5 years ago"
   },
   {
-    name: "David L.",
-    text: "We felt safe and secure thanks to their expert staff. Will use again!",
+    name: "Bret Wilbun",
+    text: "Great security provider in the Dallas area offering residential, commercial, and industrial security service options. This is a one-stop shop for all of your security needs. Recommended for providing the right solutions to a wide array of security concerns.",
     rating: 5,
+    date: "a year ago"
   },
   {
-    name: "Angela P.",
-    text: "Outstanding service and attention to detail. The best in the business!",
+    name: "Lina Alarcon",
+    text: "Look no more! If you are seeking to protect your business, shopping center or residence, Shadow Protective has proven to be the best in its industry. Their reliability, professionalism and high end training, sets them apart from everybody else out there. I highly recommend their services!",
     rating: 5,
+    date: "4 years ago"
   },
   {
-    name: "Michael B.",
-    text: "Very professional and responsive. Shadow Protective Services exceeded our expectations.",
+    name: "Safer Muhammet",
+    text: "I’ve dealt with Hope for over a year and he’s always provided top notch security services in my neighborhood. All his officers are professional and make me feel safe when patrolling my neighborhood. Thank you for serving and protecting.",
     rating: 5,
+    date: "5 years ago"
   },
   {
-    name: "Samantha K.",
-    text: "Great communication and top-notch security. Thank you for your dedication!",
+    name: "Kathryn Barlow",
+    text: "Absolutely the best Guard Service. I’ve used Shadow for several years. They are the most reliable, respectful and responsible Guards I have ever employed. I wish I could give them more stars.",
     rating: 5,
+    date: "5 years ago"
+  },
+  {
+    name: "Brian Burke",
+    text: "Very dependable and solid security service provider in the Dallas area. Level 3 armed and canine certified. Expert provider of Personnel, facility, event, and other security. Highly recommended.",
+    rating: 5,
+    date: "2 years ago"
+  },
+  {
+    name: "Nate Russell",
+    text: "The entire Shadow Protective team have been outstanding to deal with. They set the bar for their industry and have gone above and beyond for me on multiple occasions. Thank y'all for all you do.",
+    rating: 5,
+    date: "4 years ago"
+  },
+  {
+    name: "Charity O.",
+    text: "Very professional, amazing services!! They’re always on time and get the job DONE!!! Love working with this company & will continue to do so without hesitation!",
+    rating: 5,
+    date: "2 years ago"
   },
 ];
 
 const Star = ({ filled }) => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill={filled ? "#ffe066" : "#fff"} stroke="#ffe066" strokeWidth="1.2" style={{marginRight: 2}} aria-hidden="true">
+  <svg width="20" height="20" viewBox="0 0 20 20" fill={filled ? "#fff" : "none"} stroke="#fff" strokeWidth="1.5" style={{marginRight: 2}} aria-hidden="true">
     <polygon points="10,2 12.4,7.5 18.3,7.7 13.7,11.7 15.2,17.3 10,14 4.8,17.3 6.3,11.7 1.7,7.7 7.6,7.5" />
   </svg>
 );
@@ -54,7 +78,7 @@ export default function TestimonialsCarousel() {
     let start;
     let frame;
     let px = 0;
-    const speed = 0.5; // px per frame
+    const speed = 1.5; // px per frame (increased speed)
 
     function step(ts) {
       if (!start) start = ts;
@@ -83,7 +107,7 @@ export default function TestimonialsCarousel() {
                     <Star key={idx} filled={idx < t.rating} />
                   ))}
                 </span>
-                <span className={styles.testimonialName}> {t.name}</span>
+                <span className={styles.testimonialName}>{t.name}</span>
               </div>
             </div>
           ))}

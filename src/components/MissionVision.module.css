@@ -28,7 +28,7 @@
 .section {
   width: 100vw;
   min-height: 100vh;
-  background: #181A1B;
+  background: #23242a;
   padding: 24px 0 24px 0;
   box-sizing: border-box;
   display: flex;
@@ -68,7 +68,7 @@
 
 .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   gap: 32px;
