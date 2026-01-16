@@ -4,11 +4,15 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: clamp(18px, 4vh, 32px) 6vw;
+  width: 100%;
+  max-width: 100vw;
+  padding: clamp(18px, 4vh, 32px) clamp(90px, 20vw, 240px);
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: clamp(8px, 3vw, 28px);
+  flex-wrap: nowrap;
   transition: background-color 0.4s ease, box-shadow 0.4s ease,
     padding 0.35s ease;
 }
@@ -16,20 +20,24 @@
 .headerScrolled {
   background: #1d5b56;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  padding: clamp(12px, 3vh, 20px) 5vw;
+  padding: clamp(12px, 3vh, 20px) clamp(70px, 17vw, 200px);
 }
 
 .logoContainer {
   position: absolute;
-  left: 1.5vw;
+  left: clamp(8px, 2vw, 32px);
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(70px, 15vw, 160px);
 }
 
 .logo {
-  height: 200px;
+  height: clamp(68px, 14vw, 180px);
   width: auto;
-  max-height: 28vw;
+  max-height: clamp(68px, 30vw, 200px);
   transition: height 0.35s ease;
 }
 
@@ -39,12 +47,16 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: min(100%, 760px);
+  padding: 0 clamp(16px, 4vw, 48px);
 }
 
 .navPanel {
   position: absolute;
-  right: clamp(16px, 4vw, 72px);
-  top: calc(26px + 52px + 12px);
+  right: clamp(16px, 4vw, 56px);
+  top: calc(100% + 14px);
   width: 240px;
   display: flex;
   flex-direction: column;
@@ -124,8 +136,8 @@
 .menuToggle {
   display: flex;
   position: absolute;
-  right: clamp(16px, 4vw, 72px);
-  top: 26px;
+  right: clamp(16px, 4vw, 56px);
+  top: clamp(16px, 3vh, 28px);
   width: 52px;
   height: 48px;
   border-radius: 18px;
@@ -172,20 +184,27 @@
 
 .companyName {
   font-family: "Open Sans", sans-serif;
-  font-size: clamp(1.3rem, 6vw, 3.5rem);
+  font-size: clamp(1.4rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: 0.6px;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.15;
   transition: font-size 0.35s ease;
 }
 
 .companyMotto {
   font-family: "Lato", sans-serif;
-  font-size: 12px;
-  letter-spacing: 4px;
+  font-size: clamp(0.7rem, 2.3vw, 1rem);
+  letter-spacing: clamp(1.6px, 0.8vw, 4px);
   text-transform: uppercase;
   font-style: italic;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: letter-spacing 0.35s ease;
 }
 
@@ -197,21 +216,60 @@
 .headerScrolled .companyName {
   font-size: clamp(1.1rem, 4vw, 2rem);
 }
+
+@media (max-width: 1100px) {
+  .header {
+    padding: clamp(18px, 4vh, 30px) clamp(80px, 18vw, 210px);
+  }
+  .headerScrolled {
+    padding: clamp(12px, 3vh, 18px) clamp(62px, 15vw, 180px);
+  }
+  .companyName,
+  .headerScrolled .companyName,
+  .companyMotto {
+    white-space: normal;
+    text-overflow: unset;
+  }
+}
 @media (max-width: 900px) {
+  .header {
+    padding: clamp(18px, 4vh, 28px) clamp(68px, 22vw, 180px);
+  }
+  .headerScrolled {
+    padding: clamp(12px, 3vh, 20px) clamp(56px, 18vw, 150px);
+  }
+  .logoContainer {
+    left: clamp(8px, 3vw, 20px);
+    width: clamp(60px, 18vw, 130px);
+  }
   .companyName {
-    font-size: clamp(1.1rem, 7vw, 2.2rem);
+    font-size: clamp(1.15rem, 5.2vw, 2.2rem);
+    white-space: normal;
+    text-overflow: unset;
+    word-break: keep-all;
   }
   .headerScrolled .companyName {
-    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-size: clamp(1.05rem, 4.2vw, 1.6rem);
+    white-space: normal;
+    text-overflow: unset;
+  }
+  .companyMotto {
+    font-size: clamp(0.65rem, 2.5vw, 0.9rem);
+    white-space: normal;
+    text-overflow: unset;
   }
 }
 
 @media (max-width: 640px) {
   .companyName {
-    font-size: clamp(1rem, 8vw, 1.5rem);
+    font-size: clamp(1rem, 6.5vw, 1.4rem);
+    white-space: normal;
+    text-overflow: unset;
   }
   .headerScrolled .companyName {
     font-size: clamp(0.95rem, 6vw, 1.2rem);
+    white-space: normal;
+    text-overflow: unset;
   }
 }
 
@@ -258,6 +316,11 @@
     max-height: none;
   }
 
+  .titleGroup {
+    padding: 0;
+    width: 100%;
+  }
+
   .navPanel {
     left: 50%;
     right: auto;
@@ -272,6 +335,9 @@
 
   .companyMotto {
     letter-spacing: 2px;
+    font-size: clamp(0.7rem, 3.8vw, 0.95rem);
+    white-space: normal;
+    text-overflow: unset;
   }
 }
 
@@ -291,5 +357,5 @@
 }
 
 .headerScrolled .navPanel {
-  top: calc(18px + 42px + 10px);
+  top: calc(100% + 10px);
 }

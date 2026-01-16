@@ -26,8 +26,10 @@
 }
 
 .section {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   background: #23242a;
   padding: 24px 0 24px 0;
   box-sizing: border-box;

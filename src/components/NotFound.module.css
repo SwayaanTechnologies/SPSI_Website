@@ -72,8 +72,61 @@
 .galleryNavButtonRight {
   margin-left: -24px;
 }
+
+@media (max-width: 900px) {
+  .galleryCarouselWrapper {
+    margin: 20px auto;
+    padding: 0 3vw;
+  }
+  .galleryCarousel {
+    gap: 20px;
+    padding: 10px;
+  }
+  .galleryImage {
+    height: 260px;
+    max-width: 90vw;
+  }
+  .galleryNavButton {
+    width: 38px;
+    height: 38px;
+    font-size: 1.8rem;
+  }
+  .galleryNavButtonLeft {
+    margin-right: -12px;
+  }
+  .galleryNavButtonRight {
+    margin-left: -12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galleryCarouselWrapper {
+    margin: 14px auto;
+    padding: 0 4vw;
+  }
+  .galleryCarousel {
+    gap: 14px;
+    padding: 8px;
+  }
+  .galleryImage {
+    height: 200px;
+    max-width: 92vw;
+  }
+  .galleryNavButton {
+    width: 34px;
+    height: 34px;
+    font-size: 1.6rem;
+  }
+  .galleryNavButtonLeft {
+    margin-right: -6px;
+  }
+  .galleryNavButtonRight {
+    margin-left: -6px;
+  }
+}
 .notFoundWrapper {
   min-height: 100vh;
+  min-height: 100svh;
   background: #1D5B56;
   color: #fff;
   display: flex;

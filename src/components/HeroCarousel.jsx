@@ -78,11 +78,7 @@ export default function HeroCarousel() {
     const target = document.getElementById(sectionId);
     if (!target) return;
 
-    const header = document.querySelector("header");
-    const headerHeight = header ? header.offsetHeight : 0;
-    const offset =
-      target.getBoundingClientRect().top + window.scrollY - headerHeight + 20;
-    window.scrollTo({ top: Math.max(offset, 0), behavior: "smooth" });
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const handleButtonClick = (event) => {
