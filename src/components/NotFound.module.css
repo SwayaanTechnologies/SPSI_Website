@@ -1,3 +1,77 @@
+.galleryNavOuter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.galleryCarouselWrapper {
+  width: 100%;
+  max-width: 1800px;
+  margin: 32px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.galleryCarousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 32px;
+  padding: 12px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  scroll-behavior: smooth;
+}
+.galleryCarousel::-webkit-scrollbar {
+  display: none;
+}
+.galleryImage {
+  height: 360px;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px #0003;
+  flex: 0 0 auto;
+  background: #222;
+  max-width: 600px;
+  transition: transform 0.3s;
+}
+.galleryImage:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 32px #0005;
+}
+.galleryNavButton {
+  position: relative;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  background: rgba(29, 91, 86, 0.92);
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 12px;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.galleryNavButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.galleryNavButton:hover:not(:disabled),
+.galleryNavButton:focus-visible:not(:disabled) {
+  background: #178D82;
+  color: #ffe066;
+  transform: translateY(-2px);
+}
+.galleryNavButtonLeft {
+  margin-right: -24px;
+}
+.galleryNavButtonRight {
+  margin-left: -24px;
+}
 .notFoundWrapper {
   min-height: 100vh;
   background: #1D5B56;
@@ -44,6 +118,7 @@
   font-weight: 800;
   color: #1D9A8F;
   margin-bottom: 0.2em;
+  margin-top: 1.6em;
 }
 .subtitle {
   font-size: 1.3rem;

@@ -39,17 +39,17 @@ export default function SiteFooter() {
         <div>
           <h3>Company</h3>
           <ul>
-            <li>Gallery</li>
-            <li>Careers</li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/careers">Careers</a></li>
             <li>Site Map</li>
           </ul>
         </div>
         <div>
           <h3>Legal</h3>
           <ul>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-            <li>Accessibility</li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
           </ul>
         </div>
         <div>
@@ -73,6 +73,7 @@ export default function SiteFooter() {
             />
           </div>
           <div className={styles.license}>Texas DPS License #C01076301</div>
+          <div className={styles.academy}>Academy</div>
         </div>
       </div>
       <div className={styles.divider} />

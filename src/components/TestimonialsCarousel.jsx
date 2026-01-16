@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Darlene George",
     text: "They are professionals who provide the best guard service I have worked with. Shadow Protective Services provides different levels of service, depending on what your property needs. Very responsive to their clients. I highly recommend them.",
-    rating: 5,
+    rating: 4,
     date: "5 years ago"
   },
   {
