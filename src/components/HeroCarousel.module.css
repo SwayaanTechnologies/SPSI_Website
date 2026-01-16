@@ -3,7 +3,8 @@
     padding: 80px 2vw;
   }
   .title {
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    font-size: 1rem;
   }
   .description {
     font-size: 0.98rem;
@@ -218,7 +219,8 @@
   }
 
   .title {
-    font-size: clamp(1.9rem, 7vw, 2.7rem);
+    /* font-size: clamp(1.9rem, 7vw, 2.7rem); */
+    font-size: clamp(1.2rem, 4vw, 2rem);
   }
 
   .description {

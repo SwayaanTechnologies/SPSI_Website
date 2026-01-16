@@ -12,7 +12,7 @@ const testimonials = [
   },
   {
     name: "Melissa Leverett",
-    text: "Hands down the best experience I’ve had yet in my 15+ years of working in the industry with security/courtesy patrol services! Very accommodating, reliable, and always willing to help. I only wish they were a bit more responsive to resident calls and able to be on site faster when calls do come in, however, we are pretty far out for them so we appreciate them accommodating our location.",
+    text: "Hands down the best experience I’ve had yet in my 15+ years of working in the industry with security/courtesy patrol services! Very accommodating, reliable, and always willing to help. I only wish they were a bit more responsive to resident calls and able to be on site faster when calls do come in, however, we are pretty far out for them so we appreciate them accommodating our location. ",
     rating: 4,
     date: "5 years ago"
   },

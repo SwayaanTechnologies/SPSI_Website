@@ -21,7 +21,8 @@
   margin-bottom: 36px;
 }
 .heading {
-  font-size: clamp(3.2rem, 7vw, 5rem);
+  /* font-size: clamp(3.2rem, 7vw, 5rem); */
+  font-size: clamp(2.0rem, 4vw, 3rem);
   font-weight: bold;
   color: #fff;
   margin-bottom: 0;

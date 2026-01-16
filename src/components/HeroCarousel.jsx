@@ -23,7 +23,7 @@ const SLIDES = [
     secondaryTarget: "contact",
   },
   {
-    image: "/spsi7.png",
+    image: "/spsi12.png",
     title: "A Decade of Excellence\nin Protective Services",
     description:
       "Trusted by industry leaders across America for proven expertise",
