@@ -1,3 +1,66 @@
+/* Responsive company name wrapper: full name on desktop, short on mobile */
+.nameContainer {
+  position: relative;
+  width: 100%;
+  min-height: 3.6rem; /* reserve space to avoid layout shift */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companyNameFull{
+  font-size: clamp(1.5rem, 4.2vw, 3.3rem);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  transition: opacity 0.24s ease, transform 0.24s ease;
+  will-change: opacity, transform;
+}
+
+.companyNameFull {
+  font-size: clamp(1.4rem, 4vw, 3rem);
+  color: var(--white);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.companyNameShort {
+  font-size: clamp(1.2rem, 4.2vw, 2.2rem);
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+@media (max-width: 700px) {
+  .nameContainer {
+    min-height: 2.6rem;
+  }
+  .companyNameFull {
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+  .companyNameShort {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    font-size: clamp(1.25rem, 6.5vw, 2.4rem); /* slightly larger on small screens */
+  }
+}
+
+/* Reduce full company name size when header is scrolled (desktop only) */
+@media (min-width: 701px) {
+  .headerScrolled .companyNameFull {
+    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    transition: font-size 0.22s ease, transform 0.22s ease;
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -25,20 +88,48 @@
 
 .logoContainer {
   position: absolute;
-  left: clamp(8px, 2vw, 32px);
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(70px, 15vw, 160px);
+  width: clamp(120px, 25vw, 240px);
+}
+
+.logoMobile {
+  display: none;
 }
 
 .logo {
-  height: clamp(68px, 14vw, 180px);
-  width: auto;
-  max-height: clamp(68px, 30vw, 200px);
-  transition: height 0.35s ease;
+  width: 100%;
+  height: auto;
+  max-width: 220px;
+  object-fit: contain;
+  transition: width 0.35s ease;
+}
+
+@media (max-width: 700px) {
+  .logo {
+    display: none;
+  }
+  .logoContainer {
+    left: 0;
+    width: clamp(120px, 45vw, 120px);
+    min-width: 100px;
+    min-height: 70px;
+  }
+  .logoMobile {
+    display: block;
+    width: 100%;
+    height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    background-image: url('/spsi1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .titleGroup {
@@ -157,10 +248,6 @@
   outline-offset: 4px;
 }
 
-.menuToggle:hover {
-  /* No hover effect or shadow */
-}
-
 .menuToggle span {
   display: block;
   width: 20px;
@@ -217,6 +304,13 @@
   font-size: clamp(1.1rem, 4vw, 2rem);
 }
 
+.headerScrolled .companyMotto {
+  letter-spacing: 3px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 @media (max-width: 1100px) {
   .header {
     padding: clamp(18px, 4vh, 30px) clamp(80px, 18vw, 210px);
@@ -231,6 +325,43 @@
     text-overflow: unset;
   }
 }
+/* Shrink header and logo smoothly on scroll for mobile */
+@media (max-width: 700px) {
+  .headerScrolled {
+    padding: 8px 4vw; /* reduce header padding */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  }
+
+  .headerScrolled .logoContainer {
+    width: clamp(80px, 24vw, 160px);
+    min-width: 72px;
+    top: 2px; /* move logo down to provide small space on top */
+    transform: none; /* reset vertical centering */
+  }
+
+  .logoMobile {
+    transition: height 0.22s ease, max-height 0.22s ease, transform 0.22s ease;
+  }
+
+  .headerScrolled .logoMobile {
+    height: 75px;
+    max-height: 75px;
+    transform: translateY(4px); /* move logo down slightly */
+  }
+
+  .headerScrolled .companyNameShort {
+    font-size: clamp(1.25rem, 6vw, 2.1rem);
+    transform: translateY(6px);
+  }
+
+  .headerScrolled .menuToggle {
+    top: 8px;
+    width: 44px;
+    height: 40px;
+  }
+}
+
+
 @media (max-width: 900px) {
   .header {
     padding: clamp(18px, 4vh, 28px) clamp(68px, 22vw, 180px);
@@ -239,37 +370,67 @@
     padding: clamp(12px, 3vh, 20px) clamp(56px, 18vw, 150px);
   }
   .logoContainer {
-    left: clamp(8px, 3vw, 20px);
-    width: clamp(60px, 18vw, 130px);
+    left: 0px;
+    width: clamp(120px, 25vw, 240px);
   }
   .companyName {
     font-size: clamp(1.15rem, 5.2vw, 2.2rem);
-    white-space: normal;
-    text-overflow: unset;
     word-break: keep-all;
   }
   .headerScrolled .companyName {
     font-size: clamp(1.05rem, 4.2vw, 1.6rem);
-    white-space: normal;
-    text-overflow: unset;
   }
   .companyMotto {
-    font-size: clamp(0.65rem, 2.5vw, 0.9rem);
-    white-space: normal;
-    text-overflow: unset;
+    letter-spacing: 2px;
+    font-size: clamp(0.5rem, 2vw, 0.8rem);
+  }
+  .logo {
+    width: 100%;
+    height: auto;
+    max-width: 240px;
+    object-fit: contain;
+    transition: width 0.35s ease;
   }
 }
 
 @media (max-width: 640px) {
-  .companyName {
-    font-size: clamp(1rem, 6.5vw, 1.4rem);
-    white-space: normal;
-    text-overflow: unset;
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 5vw;
   }
+  .headerScrolled {
+    padding: 12px 5vw;
+  }
+  .logoContainer {
+    left: 0px;
+    width: clamp(120px, 25vw, 240px);
+  }
+  .logo {
+    height: 220px;
+    max-height: none;
+  }
+  .titleGroup {
+    padding: 0;
+    width: 100%;
+  }
+  .navPanel {
+    left: 50%;
+    right: auto;
+    width: min(320px, 90vw);
+    transform-origin: top center;
+    transform: translate(-50%, 16px) scale(0.96);
+  }
+  .navOpen {
+    transform: translate(-50%, 0) scale(1);
+  }
+  .companyMotto {
+    letter-spacing: 2px;
+    font-size: clamp(0.5rem, 2vw, 0.8rem);
+  }
+  .companyName,
   .headerScrolled .companyName {
-    font-size: clamp(0.95rem, 6vw, 1.2rem);
-    white-space: normal;
-    text-overflow: unset;
+    font-size: clamp(1rem, 6.5vw, 1.4rem);
   }
 }
 
@@ -280,68 +441,6 @@
   .headerScrolled .companyName {
     font-size: clamp(0.85rem, 7vw, 1rem);
   }
-}
-
-.headerScrolled .companyMotto {
-  letter-spacing: 3px;
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-@media (max-width: 900px) {
-  .logo {
-    height: 150px;
-  }
-}
-
-@media (max-width: 640px) {
-  .header {
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px 5vw;
-  }
-
-  .headerScrolled {
-    padding: 12px 5vw;
-  }
-
-  .logoContainer {
-    position: static;
-    transform: none;
-  }
-
-  .logo {
-    height: 120px;
-    max-height: none;
-  }
-
-  .titleGroup {
-    padding: 0;
-    width: 100%;
-  }
-
-  .navPanel {
-    left: 50%;
-    right: auto;
-    width: min(320px, 90vw);
-    transform-origin: top center;
-    transform: translate(-50%, 16px) scale(0.96);
-  }
-
-  .navOpen {
-    transform: translate(-50%, 0) scale(1);
-  }
-
-  .companyMotto {
-    letter-spacing: 2px;
-    font-size: clamp(0.7rem, 3.8vw, 0.95rem);
-    white-space: normal;
-    text-overflow: unset;
-  }
-}
-
-@media (max-width: 420px) {
   .menuToggle {
     width: 48px;
     height: 44px;

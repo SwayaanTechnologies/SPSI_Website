@@ -127,9 +127,13 @@ export default function Header({ hideMenu = false }) {
           alt="Shadow Protective Services, Inc. logo"
           className={styles.logo}
         />
+        <div className={styles.logoMobile} aria-label="Shadow Protective Services, Inc. mobile logo" />
       </div>
       <div className={styles.titleGroup}>
-        <p className={styles.companyName}>Shadow Protective Services, Inc.</p>
+        <div className={styles.nameContainer}>
+          <p className={styles.companyNameFull}>Shadow Protective Services, Inc.</p>
+          <p className={styles.companyNameShort} aria-hidden="true">SPSI, Inc.</p>
+        </div>
         <p className={styles.companyMotto}>Bene Acceptus Est Paratum</p>
       </div>
       {!hideMenu && (
