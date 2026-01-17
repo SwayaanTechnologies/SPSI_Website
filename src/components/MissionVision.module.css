@@ -1,23 +1,23 @@
 .headerBlock {
   width: 100%;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
 .header {
   /* font-size: clamp(2.5rem, 5vw, 4rem); */
   font-size: clamp(2.0rem, 4vw, 3rem);
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-weight: bold;
   color: #fff;
-  margin-bottom: 10px;
+  letter-spacing: 1.5px;
 }
 .subheader {
   font-size: clamp(1.0rem, 2vw, 1.3rem);
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   color: #fff;
   font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 0;
+  letter-spacing: 1.5px;
 }
 .star {
   color: #ffe066;
@@ -32,7 +32,7 @@
   min-height: 100vh;
   min-height: 100svh;
   background: #23242a;
-  padding: 24px 0 24px 0;
+  padding: 12px 0 12px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -71,22 +71,22 @@
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1300px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  margin: 0 auto;
-  padding: 0 24px;
+  gap: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .card {
   background: #1D5B56;
   border-radius: 18px;
-  padding: 32px 32px 32px 32px;
+  padding: 16px 32px 16px 32px; /* Add more space left and right */
   box-shadow: 0 18px 35px rgba(0,0,0,0.45);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0px;
   position: relative;
   color: #fff;
 }
@@ -103,25 +103,26 @@
 }
 
 .cardTitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ffffff;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
   text-align: center;
-  margin-top: 0;
+  /* margin-top: 2px; */
 }
 
 .card p {
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-family: 'Lato', Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-  margin-top: 0;
+  line-height: 1.6;
+  /* margin-top: 2px; */
+  text-align: justify;
 }
 
 .motto {
-  margin-top: 16px;
+  margin-top: 8px;
   font-weight: 700;
   color: #ffe066;
   letter-spacing: 1px;

@@ -228,7 +228,7 @@ export default function TestimonialsCarousel() {
 
   return (
     <div className={styles.testimonialsContainer} aria-label="Testimonials">
-      <h3 className={styles.testimonialsTitle}>Testimonials</h3>
+      {/* <h3 className={styles.testimonialsTitle}>Testimonials</h3> */}
 
       <div className={styles.testimonialsMarqueeOuter}>
         <div className={styles.testimonialsMarqueeTrack} ref={trackRef}>

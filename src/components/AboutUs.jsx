@@ -1,4 +1,4 @@
-import styles from "./AboutUs.module.css";
+import styles from "./AboutUs.module.css";  
 import TestimonialsCarousel from "./TestimonialsCarousel";
 
 export default function AboutUs() {
