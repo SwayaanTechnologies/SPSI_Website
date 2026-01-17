@@ -4,14 +4,15 @@
   margin-bottom: 40px;
 }
 .header {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  /* font-size: clamp(2.5rem, 5vw, 4rem); */
+  font-size: clamp(2.0rem, 4vw, 3rem);
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-weight: 700;
   color: #fff;
   margin-bottom: 10px;
 }
 .subheader {
-  font-size: 1.3rem;
+  font-size: clamp(1.0rem, 2vw, 1.3rem);
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   color: #fff;
   font-weight: 600;

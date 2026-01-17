@@ -12,7 +12,8 @@
 }
 
 .header h2 {
-  font-size: clamp(2rem, 6vw, 3.2rem);
+  /* font-size: clamp(2rem, 6vw, 3.2rem); */
+  font-size: clamp(2.0rem, 4vw, 3rem);
   color: #fff;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -21,7 +22,7 @@
 
 .header p {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: clamp(1.0rem, 2vw, 1.1rem);
   margin: 0;
 }
 

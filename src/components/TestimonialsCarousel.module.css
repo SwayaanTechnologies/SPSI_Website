@@ -1,4 +1,25 @@
-.carouselMarqueeOuter {
+.readMoreInlineBtn {
+  background: none;
+  border: none;
+  color: #FFD600;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0 2px;
+  margin-left: 2px;
+  transition: color 0.2s;
+}
+.readMoreInlineBtn:hover,
+.readMoreInlineBtn:focus {
+  color: #FFC107;
+  outline: none;
+}
+.ellipsis {
+  color: #fff;
+}
+.testimonialsMarqueeOuter {
   width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
@@ -9,18 +30,18 @@
   position: relative;
 }
 
-.carouselMarqueeTrack {
+.testimonialsMarqueeTrack {
   display: flex;
   flex-direction: row;
   align-items: stretch;
   will-change: transform;
 }
 
-.carouselContainer {
+.testimonialsContainer {
   width: 100vw;
   max-width: 100vw;
   margin: 0 auto;
-  padding: 36px 0 0 0;
+  padding: 2px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,16 +49,16 @@
   box-sizing: border-box;
 }
 
-.carouselTitle {
+.testimonialsTitle {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-size: clamp(2.0rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   color: #fff;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 6px; /* reduced margin for tighter layout */
   letter-spacing: 1px;
 }
 
-.carouselTrack {
+.testimonialsTrack {
   width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
@@ -47,16 +68,16 @@
   padding-bottom: 8px;
 }
 
-.carouselSlide {
+.testimonialsSlide {
   position: relative;
   min-width: 340px;
   max-width: 340px;
-  /* min-height removed for auto height */
+  height: 220px;
   background: linear-gradient(135deg, #0f5d58 40%, #0d7a72 100%);
   color: #fff;
   border-radius: 28px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
-  padding: 18px 24px 18px 24px; /* reduced vertical padding */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  padding: 12px 18px 12px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,16 +86,51 @@
   margin-right: 18px;
   box-sizing: border-box;
   transition: box-shadow 0.3s;
+  overflow: hidden;
 }
 
 .testimonialText {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-style: italic;
-  color: #f5f7ff;
-  margin-bottom: 8px; /* reduced bottom margin */
+  margin-bottom: 8px;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.4;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.testimonialText.expanded {
+  display: block;
+  max-height: 140px;
+  height: 140px;
+  overflow-y: auto;
+  padding-right: 8px;
+
+  padding-right: 8px;
+}
+/* Read More button styles */
+.readMoreBtn {
+  background: #262B52;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 4px 16px;
+  font-size: 1rem;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.readMoreBtn:hover,
+.readMoreBtn:focus {
+  background: #1D5B56;
+  color: #fff200;
+  outline: none;
 }
 
 .testimonialFooter {
@@ -112,42 +168,50 @@
 }
 
 @media (max-width: 900px) {
-  .carouselMarqueeTrack {
+  .testimonialsMarqueeTrack {
     min-height: 120px;
   }
-  .carouselSlide {
+
+  .testimonialsSlide {
     min-width: 90vw;
     max-width: 90vw;
     min-height: 120px;
     padding: 18px 8px 16px 8px;
   }
-  .carouselTitle {
+
+  .testimonialsTitle {
     font-size: 1.5rem;
   }
+
   .testimonialText {
     font-size: 1.05rem;
   }
+
   .testimonialName {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 600px) {
-  .carouselMarqueeTrack {
+  .testimonialsMarqueeTrack {
     min-height: 90px;
   }
-  .carouselSlide {
+
+  .testimonialsSlide {
     min-width: 98vw;
     max-width: 98vw;
     min-height: 90px;
     padding: 10px 2vw 10px 2vw;
   }
-  .carouselTitle {
+
+  .testimonialsTitle {
     font-size: 1.1rem;
   }
+
   .testimonialText {
     font-size: 0.95rem;
   }
+
   .testimonialName {
     font-size: 0.85rem;
   }
